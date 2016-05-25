@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		036948F61CF5F7B500406ACC /* GenericReusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 036948F51CF5F7B500406ACC /* GenericReusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		036949011CF5F80E00406ACC /* GenericReusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 036948FE1CF5F80E00406ACC /* GenericReusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		036948F21CF5F7B500406ACC /* GenericReusable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GenericReusable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		036948F51CF5F7B500406ACC /* GenericReusable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericReusable.h; sourceTree = "<group>"; };
-		036948F71CF5F7B500406ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		036948FE1CF5F80E00406ACC /* GenericReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericReusable.h; sourceTree = "<group>"; };
+		036949001CF5F80E00406ACC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +30,8 @@
 		036948E81CF5F7B500406ACC = {
 			isa = PBXGroup;
 			children = (
-				036948F41CF5F7B500406ACC /* GenericReusable */,
+				036948FD1CF5F80E00406ACC /* Sources */,
+				036948FF1CF5F80E00406ACC /* Support */,
 				036948F31CF5F7B500406ACC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,13 +44,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		036948F41CF5F7B500406ACC /* GenericReusable */ = {
+		036948FD1CF5F80E00406ACC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				036948F51CF5F7B500406ACC /* GenericReusable.h */,
-				036948F71CF5F7B500406ACC /* Info.plist */,
+				036948FE1CF5F80E00406ACC /* GenericReusable.h */,
 			);
-			path = GenericReusable;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		036948FF1CF5F80E00406ACC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				036949001CF5F80E00406ACC /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +67,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				036948F61CF5F7B500406ACC /* GenericReusable.h in Headers */,
+				036949011CF5F80E00406ACC /* GenericReusable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +242,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GenericReusable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.GenericReusable;
@@ -250,7 +258,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GenericReusable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.GenericReusable;
@@ -278,6 +286,7 @@
 				036948FC1CF5F7B500406ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
