@@ -53,19 +53,19 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'GenericReusable', '~> 0.1.0'
+    pod 'GenericReusable', '~> 0.2.0'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/GenericReusable" ~> 0.1.0
+    github "devxoul/GenericReusable" ~> 0.2.0
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/GenericReusable', '0.1.0', :files => 'Sources/*.swift'
+    github 'devxoul/GenericReusable', '0.2.0', :files => 'Sources/*.swift'
     ```
 
 
