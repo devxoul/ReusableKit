@@ -29,12 +29,12 @@ public protocol CellType: class {
 public struct GenericCell<Cell: CellType> {
     public typealias Class = Cell
 
-    let identifier: String
+    public let identifier: String
 
     /// Create and returns a new `GenericCell` instance.
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-    init(identifier: String? = nil) {
+    public init(identifier: String? = nil) {
         self.identifier = identifier ?? NSUUID().UUIDString
     }
 }
@@ -46,12 +46,12 @@ public protocol ViewType: class {
 public struct GenericView<View: ViewType> {
     public typealias Class = View
 
-    let identifier: String
+    public let identifier: String
 
     /// Create and returns a new `GenericView` instance.
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-    init(identifier: String? = nil) {
+    public init(identifier: String? = nil) {
         self.identifier = identifier ?? NSUUID().UUIDString
     }
 }
