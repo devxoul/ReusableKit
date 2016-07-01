@@ -55,24 +55,24 @@ extension UICollectionView {
     // MARK: Cell
 
     /// Registers a generic cell for use in creating new collection view cells.
-    public func registerCell<Cell: CellType>(cell: GenericCell<Cell>) {
+    public func registerCell<Cell: CellType>(cell: ReusableCell<Cell>) {
         self.registerClass(Cell.self, forCellWithReuseIdentifier: cell.identifier)
     }
 
     /// Returns a generic reusable cell located by its identifier.
-    public func dequeueCell<Cell: CellType>(cell: GenericCell<Cell>, forIndexPath indexPath: NSIndexPath) -> Cell {
+    public func dequeueCell<Cell: CellType>(cell: ReusableCell<Cell>, forIndexPath indexPath: NSIndexPath) -> Cell {
         return self.dequeueReusableCellWithReuseIdentifier(cell.identifier, forIndexPath: indexPath) as! Cell
     }
 
     // MARK: Supplementary View
 
     /// Registers a generic view for use in creating new supplementary views for the collection view.
-    public func registerView<View: ViewType>(view: GenericView<View>, kind: SupplementaryViewKind) {
+    public func registerView<View: ViewType>(view: ReusableView<View>, kind: SupplementaryViewKind) {
         self.registerClass(View.self, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: view.identifier)
     }
 
     /// Returns a generic reusable supplementary view located by its identifier and kind.
-    public func dequeueView<View: ViewType>(view: GenericView<View>,
+    public func dequeueView<View: ViewType>(view: ReusableView<View>,
                                             kind: SupplementaryViewKind,
                                             forIndexPath indexPath: NSIndexPath) -> View {
         return self.dequeueReusableSupplementaryViewOfKind(kind.rawValue,

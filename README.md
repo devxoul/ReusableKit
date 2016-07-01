@@ -1,9 +1,9 @@
-GenericReusable
-===============
+ReusableKit
+===========
 
 ![Swift](https://img.shields.io/badge/Swift-2.2-orange.svg)
-[![Build Status](https://travis-ci.org/devxoul/GenericReusable.svg)](https://travis-ci.org/devxoul/GenericReusable)
-[![CocoaPods](http://img.shields.io/cocoapods/v/GenericReusable.svg)](https://cocoapods.org/pods/GenericReusable)
+[![Build Status](https://travis-ci.org/devxoul/ReusableKit.svg)](https://travis-ci.org/devxoul/ReusableKit)
+[![CocoaPods](http://img.shields.io/cocoapods/v/ReusableKit.svg)](https://cocoapods.org/pods/ReusableKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Generic reusables for Cocoa. Currently supports `UITableView` and `UICollectionView`.
@@ -53,23 +53,23 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'GenericReusable', '~> 0.2.0'
+    pod 'ReusableKit', '~> 0.2.0'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/GenericReusable" ~> 0.2.0
+    github "devxoul/ReusableKit" ~> 0.2.0
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/GenericReusable', '0.2.0', :files => 'Sources/*.swift'
+    github 'devxoul/ReusableKit', '0.2.0', :files => 'Sources/*.swift'
     ```
 
 
 License
 -------
 
-**GenericReusable** is under MIT license. See the [LICENSE](LICENSE) file for more info.
+**ReusableKit** is under MIT license. See the [LICENSE](LICENSE) file for more info.

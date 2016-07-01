@@ -22,12 +22,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for GenericReusable.
-FOUNDATION_EXPORT double GenericReusableVersionNumber;
+//! Project version number for ReusableKit.
+FOUNDATION_EXPORT double ReusableKitVersionNumber;
 
-//! Project version string for GenericReusable.
-FOUNDATION_EXPORT const unsigned char GenericReusableVersionString[];
+//! Project version string for ReusableKit.
+FOUNDATION_EXPORT const unsigned char ReusableKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <GenericReusable/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <ReusableKit/PublicHeader.h>
 
 

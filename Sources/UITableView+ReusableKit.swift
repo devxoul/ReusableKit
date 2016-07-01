@@ -32,29 +32,29 @@ extension UITableView {
     // MARK: Cell
 
     /// Registers a generic cell for use in creating new table cells.
-    public func registerCell<Cell: CellType>(cell: GenericCell<Cell>) {
+    public func registerCell<Cell: CellType>(cell: ReusableCell<Cell>) {
         self.registerClass(Cell.self, forCellReuseIdentifier: cell.identifier)
     }
 
     /// Returns a generic reusable cell located by its identifier.
-    public func dequeueCell<Cell: CellType>(cell: GenericCell<Cell>) -> Cell? {
+    public func dequeueCell<Cell: CellType>(cell: ReusableCell<Cell>) -> Cell? {
         return self.dequeueReusableCellWithIdentifier(cell.identifier) as? Cell
     }
 
     /// Returns a generic reusable cell located by its identifier.
-    public func dequeueCell<Cell: CellType>(cell: GenericCell<Cell>, forIndexPath indexPath: NSIndexPath) -> Cell {
+    public func dequeueCell<Cell: CellType>(cell: ReusableCell<Cell>, forIndexPath indexPath: NSIndexPath) -> Cell {
         return self.dequeueReusableCellWithIdentifier(cell.identifier, forIndexPath: indexPath) as! Cell
     }
 
     // MARK: View
 
     /// Registers a generic view for use in creating new table header or footer views.
-    public func registerView<View: ViewType>(cell: GenericView<View>) {
+    public func registerView<View: ViewType>(cell: ReusableView<View>) {
         self.registerClass(View.self, forHeaderFooterViewReuseIdentifier: cell.identifier)
     }
 
     /// Returns a generic reusable header of footer view located by its identifier.
-    public func dequeueView<View: ViewType>(view: GenericView<View>) -> View? {
+    public func dequeueView<View: ViewType>(view: ReusableView<View>) -> View? {
         return self.dequeueReusableHeaderFooterViewWithIdentifier(view.identifier) as? View
     }
 

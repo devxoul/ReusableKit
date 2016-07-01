@@ -26,12 +26,12 @@ public protocol CellType: class {
 }
 
 /// A generic class that represents reusable cells.
-public struct GenericCell<Cell: CellType> {
+public struct ReusableCell<Cell: CellType> {
     public typealias Class = Cell
 
     public let identifier: String
 
-    /// Create and returns a new `GenericCell` instance.
+    /// Create and returns a new `ReusableCell` instance.
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
     public init(identifier: String? = nil) {
@@ -43,12 +43,12 @@ public protocol ViewType: class {
 }
 
 /// A generic class that represents reusable views.
-public struct GenericView<View: ViewType> {
+public struct ReusableView<View: ViewType> {
     public typealias Class = View
 
     public let identifier: String
 
-    /// Create and returns a new `GenericView` instance.
+    /// Create and returns a new `ReusableView` instance.
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
     public init(identifier: String? = nil) {
