@@ -16,8 +16,8 @@ At a Glance
 
 ```swift
 struct Reusable {
-    static let headerView = GenericCell<SectionHeaderView>()
-    static let userCell = GenericCell<UserCell>()
+    static let headerView = ReusableCell<SectionHeaderView>()
+    static let userCell = ReusableCell<UserCell>()
 }
 
 tableView.registerView(Reusable.headerView)
@@ -31,8 +31,8 @@ tableView.dequeueCell(Reusable.userCell)
 
 ```swift
 struct Reusable {
-    static let headerView = GenericCell<SectionHeaderView>()
-    static let photoCell = GenericCell<PhotoCell>()
+    static let headerView = ReusableCell<SectionHeaderView>()
+    static let photoCell = ReusableCell<PhotoCell>()
 }
 
 collection.registerView(Reusable.headerView, kind: .Header)
@@ -53,19 +53,19 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'ReusableKit', '~> 0.2.0'
+    pod 'ReusableKit', '~> 0.3.0'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/ReusableKit" ~> 0.2.0
+    github "devxoul/ReusableKit" ~> 0.3.0
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/ReusableKit', '0.2.0', :files => 'Sources/*.swift'
+    github 'devxoul/ReusableKit', '0.3.0', :files => 'Sources/*.swift'
     ```
 
 
