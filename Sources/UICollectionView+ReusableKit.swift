@@ -68,16 +68,28 @@ extension UICollectionView {
 
     /// Registers a generic view for use in creating new supplementary views for the collection view.
     public func registerView<View: ViewType>(view: ReusableView<View>, kind: SupplementaryViewKind) {
-        self.registerClass(View.self, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: view.identifier)
+        self.registerView(view, kind: kind.rawValue)
+    }
+
+    /// Registers a generic view for use in creating new supplementary views for the collection view.
+    public func registerView<View: ViewType>(view: ReusableView<View>, kind: String) {
+        self.registerClass(View.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
+    }
+
+    /// Returns a generic reusable supplementary view located by its identifier and kind.
+    public func dequeueView<View: ViewType>(view: ReusableView<View>,
+                                            kind: String,
+                                            forIndexPath indexPath: NSIndexPath) -> View {
+        return self.dequeueReusableSupplementaryViewOfKind(kind,
+                                                           withReuseIdentifier: view.identifier,
+                                                           forIndexPath: indexPath) as! View
     }
 
     /// Returns a generic reusable supplementary view located by its identifier and kind.
     public func dequeueView<View: ViewType>(view: ReusableView<View>,
                                             kind: SupplementaryViewKind,
                                             forIndexPath indexPath: NSIndexPath) -> View {
-        return self.dequeueReusableSupplementaryViewOfKind(kind.rawValue,
-                                                           withReuseIdentifier: view.identifier,
-                                                           forIndexPath: indexPath) as! View
+        return self.dequeueView(view, kind: kind.rawValue, forIndexPath: indexPath)
     }
 
 }
