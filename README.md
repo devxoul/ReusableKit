@@ -53,19 +53,19 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'ReusableKit', '~> 0.3.0'
+    pod 'ReusableKit', '~> 0.4'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/ReusableKit" ~> 0.3.0
+    github "devxoul/ReusableKit" ~> 0.4
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/ReusableKit', '0.3.0', :files => 'Sources/*.swift'
+    github 'devxoul/ReusableKit', '0.4.0', :files => 'Sources/*.swift'
     ```
 
 
