@@ -35,7 +35,7 @@ public struct ReusableCell<Cell: CellType> {
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
     public init(identifier: String? = nil) {
-        self.identifier = identifier ?? NSUUID().UUIDString
+        self.identifier = identifier ?? UUID().uuidString
     }
 }
 
@@ -52,6 +52,6 @@ public struct ReusableView<View: ViewType> {
     ///
     /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
     public init(identifier: String? = nil) {
-        self.identifier = identifier ?? NSUUID().UUIDString
+        self.identifier = identifier ?? UUID().uuidString
     }
 }

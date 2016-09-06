@@ -26,20 +26,20 @@ import UIKit
 
 /// An enumeration that represents UICollectionView supplementary view kind.
 public enum SupplementaryViewKind: String {
-    case Header, Footer
+    case header, footer
 
     public init?(rawValue: String) {
         switch rawValue {
-        case UICollectionElementKindSectionHeader: self = .Header
-        case UICollectionElementKindSectionFooter: self = .Footer
+        case UICollectionElementKindSectionHeader: self = .header
+        case UICollectionElementKindSectionFooter: self = .footer
         default: return nil
         }
     }
 
     public var rawValue: String {
         switch self {
-        case .Header: return UICollectionElementKindSectionHeader
-        case .Footer: return UICollectionElementKindSectionFooter
+        case .header: return UICollectionElementKindSectionHeader
+        case .footer: return UICollectionElementKindSectionFooter
         }
     }
 }
@@ -55,41 +55,35 @@ extension UICollectionView {
     // MARK: Cell
 
     /// Registers a generic cell for use in creating new collection view cells.
-    public func registerCell<Cell: CellType>(cell: ReusableCell<Cell>) {
-        self.registerClass(Cell.self, forCellWithReuseIdentifier: cell.identifier)
+    public func register<Cell: CellType>(_ cell: ReusableCell<Cell>) {
+        self.register(Cell.self, forCellWithReuseIdentifier: cell.identifier)
     }
 
     /// Returns a generic reusable cell located by its identifier.
-    public func dequeueCell<Cell: CellType>(cell: ReusableCell<Cell>, forIndexPath indexPath: NSIndexPath) -> Cell {
-        return self.dequeueReusableCellWithReuseIdentifier(cell.identifier, forIndexPath: indexPath) as! Cell
+    public func dequeue<Cell: CellType>(_ cell: ReusableCell<Cell>, for indexPath: IndexPath) -> Cell {
+        return self.dequeueReusableCell(withReuseIdentifier: cell.identifier, for: indexPath) as! Cell
     }
 
     // MARK: Supplementary View
 
     /// Registers a generic view for use in creating new supplementary views for the collection view.
-    public func registerView<View: ViewType>(view: ReusableView<View>, kind: SupplementaryViewKind) {
-        self.registerView(view, kind: kind.rawValue)
+    public func register<View: ViewType>(_ view: ReusableView<View>, kind: SupplementaryViewKind) {
+        self.register(view, kind: kind.rawValue)
     }
 
     /// Registers a generic view for use in creating new supplementary views for the collection view.
-    public func registerView<View: ViewType>(view: ReusableView<View>, kind: String) {
-        self.registerClass(View.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
+    public func register<View: ViewType>(_ view: ReusableView<View>, kind: String) {
+        self.register(View.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
     }
 
     /// Returns a generic reusable supplementary view located by its identifier and kind.
-    public func dequeueView<View: ViewType>(view: ReusableView<View>,
-                                            kind: String,
-                                            forIndexPath indexPath: NSIndexPath) -> View {
-        return self.dequeueReusableSupplementaryViewOfKind(kind,
-                                                           withReuseIdentifier: view.identifier,
-                                                           forIndexPath: indexPath) as! View
+    public func dequeue<View: ViewType>(_ view: ReusableView<View>, kind: String, for indexPath: IndexPath) -> View {
+        return self.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: view.identifier, for: indexPath) as! View
     }
 
     /// Returns a generic reusable supplementary view located by its identifier and kind.
-    public func dequeueView<View: ViewType>(view: ReusableView<View>,
-                                            kind: SupplementaryViewKind,
-                                            forIndexPath indexPath: NSIndexPath) -> View {
-        return self.dequeueView(view, kind: kind.rawValue, forIndexPath: indexPath)
+    public func dequeue<View: ViewType>(_ view: ReusableView<View>, kind: SupplementaryViewKind, for indexPath: IndexPath) -> View {
+        return self.dequeue(view, kind: kind.rawValue, for: indexPath)
     }
 
 }
