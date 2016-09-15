@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ReusableKit"
-  s.version          = "0.4.0"
+  s.version          = "1.0.0"
   s.summary          = "Generic reusables for Cocoa."
   s.homepage         = "https://github.com/devxoul/ReusableKit"
   s.license          = { :type => "MIT", :file => "LICENSE" }
