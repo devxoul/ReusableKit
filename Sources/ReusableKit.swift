@@ -27,16 +27,16 @@ public protocol CellType: class {
 
 /// A generic class that represents reusable cells.
 public struct ReusableCell<Cell: CellType> {
-    public typealias Class = Cell
+  public typealias Class = Cell
 
-    public let identifier: String
+  public let identifier: String
 
-    /// Create and returns a new `ReusableCell` instance.
-    ///
-    /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-    public init(identifier: String? = nil) {
-        self.identifier = identifier ?? NSUUID().UUIDString
-    }
+  /// Create and returns a new `ReusableCell` instance.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  public init(identifier: String? = nil) {
+    self.identifier = identifier ?? UUID().uuidString
+  }
 }
 
 public protocol ViewType: class {
@@ -44,14 +44,14 @@ public protocol ViewType: class {
 
 /// A generic class that represents reusable views.
 public struct ReusableView<View: ViewType> {
-    public typealias Class = View
+  public typealias Class = View
 
-    public let identifier: String
+  public let identifier: String
 
-    /// Create and returns a new `ReusableView` instance.
-    ///
-    /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-    public init(identifier: String? = nil) {
-        self.identifier = identifier ?? NSUUID().UUIDString
-    }
+  /// Create and returns a new `ReusableView` instance.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  public init(identifier: String? = nil) {
+    self.identifier = identifier ?? UUID().uuidString
+  }
 }
