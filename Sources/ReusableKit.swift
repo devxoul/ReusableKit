@@ -43,6 +43,15 @@ public struct ReusableCell<Cell: CellType> {
       .first ?? identifier ?? UUID().uuidString
     self.nib = nib
   }
+
+  /// A convenience initializer.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  /// - parameter nibName: A name of nib.
+  public init(identifier: String? = nil, nibName: String) {
+    let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
+  }
 }
 
 public protocol ViewType: class {
@@ -62,5 +71,14 @@ public struct ReusableView<View: ViewType> {
   public init(identifier: String? = nil, nib: UINib? = nil) {
     self.identifier = identifier ?? UUID().uuidString
     self.nib = nib
+  }
+
+  /// A convenience initializer.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  /// - parameter nibName: A name of nib.
+  public init(identifier: String? = nil, nibName: String) {
+    let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
   }
 }
