@@ -33,7 +33,11 @@ extension UITableView {
 
   /// Registers a generic cell for use in creating new table cells.
   public func register<Cell: CellType>(_ cell: ReusableCell<Cell>) {
-    self.register(Cell.self, forCellReuseIdentifier: cell.identifier)
+    if let nib = cell.nib {
+      self.register(nib, forCellReuseIdentifier: cell.identifier)
+    } else {
+      self.register(Cell.self, forCellReuseIdentifier: cell.identifier)
+    }
   }
 
   /// Returns a generic reusable cell located by its identifier.
@@ -50,7 +54,11 @@ extension UITableView {
 
   /// Registers a generic view for use in creating new table header or footer views.
   public func register<View: ViewType>(_ cell: ReusableView<View>) {
-    self.register(View.self, forHeaderFooterViewReuseIdentifier: cell.identifier)
+    if let nib = cell.nib {
+      self.register(nib, forHeaderFooterViewReuseIdentifier: cell.identifier)
+    } else {
+      self.register(View.self, forHeaderFooterViewReuseIdentifier: cell.identifier)
+    }
   }
 
   /// Returns a generic reusable header of footer view located by its identifier.

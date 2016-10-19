@@ -20,9 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import UIKit
 
 public protocol CellType: class {
+  var reuseIdentifier: String? { get }
 }
 
 /// A generic class that represents reusable cells.
@@ -30,12 +31,26 @@ public struct ReusableCell<Cell: CellType> {
   public typealias Class = Cell
 
   public let identifier: String
+  public let nib: UINib?
 
   /// Create and returns a new `ReusableCell` instance.
   ///
   /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-  public init(identifier: String? = nil) {
-    self.identifier = identifier ?? UUID().uuidString
+  /// - parameter nib: A `UINib` instance. Use this when registering from xib.
+  public init(identifier: String? = nil, nib: UINib? = nil) {
+    self.identifier = nib?.instantiate(withOwner: nil, options: nil).lazy
+      .flatMap { ($0 as? CellType)?.reuseIdentifier }
+      .first ?? identifier ?? UUID().uuidString
+    self.nib = nib
+  }
+
+  /// A convenience initializer.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  /// - parameter nibName: A name of nib.
+  public init(identifier: String? = nil, nibName: String) {
+    let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
   }
 }
 
@@ -47,11 +62,23 @@ public struct ReusableView<View: ViewType> {
   public typealias Class = View
 
   public let identifier: String
+  public let nib: UINib?
 
   /// Create and returns a new `ReusableView` instance.
   ///
   /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
-  public init(identifier: String? = nil) {
+  /// - parameter nib: A `UINib` instance. Use this when registering from xib.
+  public init(identifier: String? = nil, nib: UINib? = nil) {
     self.identifier = identifier ?? UUID().uuidString
+    self.nib = nib
+  }
+
+  /// A convenience initializer.
+  ///
+  /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
+  /// - parameter nibName: A name of nib.
+  public init(identifier: String? = nil, nibName: String) {
+    let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
   }
 }

@@ -56,7 +56,11 @@ extension UICollectionView {
 
   /// Registers a generic cell for use in creating new collection view cells.
   public func register<Cell: CellType>(_ cell: ReusableCell<Cell>) {
-    self.register(Cell.self, forCellWithReuseIdentifier: cell.identifier)
+    if let nib = cell.nib {
+      self.register(nib, forCellWithReuseIdentifier: cell.identifier)
+    } else {
+      self.register(Cell.self, forCellWithReuseIdentifier: cell.identifier)
+    }
   }
 
   /// Returns a generic reusable cell located by its identifier.
@@ -73,7 +77,11 @@ extension UICollectionView {
 
   /// Registers a generic view for use in creating new supplementary views for the collection view.
   public func register<View: ViewType>(_ view: ReusableView<View>, kind: String) {
-    self.register(View.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
+    if let nib = view.nib {
+      self.register(nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
+    } else {
+      self.register(View.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: view.identifier)
+    }
   }
 
   /// Returns a generic reusable supplementary view located by its identifier and kind.
