@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035C070A1DB7C0EA0030A83A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C07091DB7C0EA0030A83A /* UIKit.framework */; };
 		03D0C0DB1D26A57500EE93D5 /* ReusableKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D0C0D71D26A57500EE93D5 /* ReusableKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03D0C0DC1D26A57500EE93D5 /* ReusableKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0C0D81D26A57500EE93D5 /* ReusableKit.swift */; };
 		03D0C0DD1D26A57500EE93D5 /* UICollectionView+ReusableKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0C0D91D26A57500EE93D5 /* UICollectionView+ReusableKit.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		035C07091DB7C0EA0030A83A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		036948F21CF5F7B500406ACC /* ReusableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReusableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		036949001CF5F80E00406ACC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D0C0D71D26A57500EE93D5 /* ReusableKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReusableKit.h; sourceTree = "<group>"; };
@@ -27,18 +29,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C070A1DB7C0EA0030A83A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035C07081DB7C0EA0030A83A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				035C07091DB7C0EA0030A83A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		036948E81CF5F7B500406ACC = {
 			isa = PBXGroup;
 			children = (
 				036948FD1CF5F80E00406ACC /* Sources */,
 				036948FF1CF5F80E00406ACC /* Support */,
 				036948F31CF5F7B500406ACC /* Products */,
+				035C07081DB7C0EA0030A83A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
