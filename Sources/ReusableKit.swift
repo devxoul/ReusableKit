@@ -30,6 +30,7 @@ public protocol CellType: class {
 public struct ReusableCell<Cell: CellType> {
   public typealias Class = Cell
 
+  public let `class`: Class.Type = Class.self
   public let identifier: String
   public let nib: UINib?
 
@@ -61,6 +62,7 @@ public protocol ViewType: class {
 public struct ReusableView<View: ViewType> {
   public typealias Class = View
 
+  public let `class`: Class.Type = Class.self
   public let identifier: String
   public let nib: UINib?
 
