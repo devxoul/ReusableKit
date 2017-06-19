@@ -70,6 +70,17 @@ collection.dequeue(Reusable.headerView, kind: .header, for: indexPath)
 collection.dequeue(Reusable.photoCell, for: indexPath)
 ```
 
+#### RxSwift Extension
+
+ReusableKit supports a RxSwift extension.
+
+```swift
+users // Observable<[String]>
+  .bind(to: collectionView.rx.items(Reusable.userCell)) { i, user, cell in
+    cell.user = user
+  }
+```
+
 ## Contrubiting
 
 Pull requests are welcomed 💖
@@ -86,6 +97,7 @@ $ swift package generate-xcodeproj
 
     ```ruby
     pod 'ReusableKit'
+    pod 'ReusableKit/RxSwift'  # with RxSwift extension
     ```
 
 ## License
