@@ -3,7 +3,7 @@ language: objective-c
 sudo: required
 env:
   global:
-    - WORKSPACE="ReusableKit.xcworkspace"
+    - PROJECT="ReusableKit.xcodeproj"
     - SCHEME="ReusableKit"
     - IOS_SDK="iphonesimulator10.3"
     - MACOS_SDK="macosx10.12"
@@ -19,11 +19,11 @@ install:
 before_script:
   - set -o pipefail
   - pod repo update
-  - make project
+  - swift package generate-xcodeproj
 
 script:
   - xcodebuild clean build test
-    -workspace "$WORKSPACE"
+    -project "$PROJECT"
     -scheme "$SCHEME"
     -sdk "$SDK"
     -destination "$DESTINATION"
