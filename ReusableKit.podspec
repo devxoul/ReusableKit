@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ReusableKit"
-  s.version          = "1.3.0"
+  s.version          = "2.0.0"
   s.summary          = "Generic reusables for Cocoa."
   s.homepage         = "https://github.com/devxoul/ReusableKit"
   s.license          = { :type => "MIT", :file => "LICENSE" }
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Sources/RxReusableKit/*.swift"
     ss.dependency "ReusableKit/Core"
-    ss.dependency "RxSwift", ">= 3.4"
-    ss.dependency "RxCocoa", ">= 3.4"
+    ss.dependency "RxSwift", ">= 4.0.0-beta.0"
+    ss.dependency "RxCocoa", ">= 4.0.0-beta.0"
   end
 end
