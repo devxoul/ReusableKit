@@ -1,14 +1,20 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
   name: "ReusableKit",
-  targets: [
-    Target(name: "ReusableKit"),
-    Target(name: "RxReusableKit", dependencies: ["ReusableKit"]),
+  products: [
+    .library(name: "ReusableKit", targets: ["ReusableKit"]),
+    .library(name: "RxReusableKit", targets: ["RxReusableKit"]),
   ],
   dependencies: [
-    .Package(url: "https://github.com/ReactiveX/RxSwift.git", majorVersion: 3)
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .branch("rxswift4.0-swift4.0")),
+  ],
+  targets: [
+    .target(name: "ReusableKit"),
+    .target(name: "RxReusableKit", dependencies: ["ReusableKit", "RxSwift", "RxCocoa"]),
+    .testTarget(name: "ReusableKitTests", dependencies: ["ReusableKit"]),
+    .testTarget(name: "RxReusableKitTests", dependencies: ["RxReusableKit"]),
   ]
 )
