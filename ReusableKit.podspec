@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
+  s.default_subspec = "Core"
+
   s.subspec "Core" do |ss|
     ss.source_files = "Sources/ReusableKit/*.swift"
   end
