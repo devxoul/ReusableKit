@@ -9,7 +9,7 @@ let package = Package(
     .library(name: "RxReusableKit", targets: ["RxReusableKit"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .branch("rxswift4.0-swift4.0")),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.0.0")),
   ],
   targets: [
     .target(name: "ReusableKit"),
