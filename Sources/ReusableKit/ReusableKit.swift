@@ -19,7 +19,7 @@ public struct ReusableCell<Cell: CellType> {
   /// - parameter nib: A `UINib` instance. Use this when registering from xib.
   public init(identifier: String? = nil, nib: UINib? = nil) {
     self.identifier = nib?.instantiate(withOwner: nil, options: nil).lazy
-      .flatMap { ($0 as? CellType)?.reuseIdentifier }
+      .compactMap { ($0 as? CellType)?.reuseIdentifier }
       .first ?? identifier ?? UUID().uuidString
     self.nib = nib
   }
