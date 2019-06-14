@@ -5,14 +5,14 @@ import PackageDescription
 let package = Package(
   name: "ReusableKit",
   platforms: [
-    .iOS(.v8)
+    .iOS(.v8), .tvOS(.v9)
   ],
   products: [
     .library(name: "ReusableKit", targets: ["ReusableKit"]),
     .library(name: "RxReusableKit", targets: ["RxReusableKit"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.0.0")),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
   ],
   targets: [
     .target(name: "ReusableKit"),
