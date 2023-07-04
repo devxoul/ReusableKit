@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.swift_version    = "5.0"
 
-  s.ios.deployment_target = "8.0"
+  s.ios.deployment_target = "9.0"
 
   s.default_subspec = "Core"
 
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Sources/RxReusableKit/*.swift"
     ss.dependency "ReusableKit/Core"
-    ss.dependency "RxSwift", "~> 5.0"
-    ss.dependency "RxCocoa", "~> 5.0"
+    ss.dependency "RxSwift", "~> 6.0"
+    ss.dependency "RxCocoa", "~> 6.0"
   end
 end

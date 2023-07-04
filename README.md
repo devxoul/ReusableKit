@@ -93,7 +93,7 @@ $ swift package generate-xcodeproj
 
 ## Installation
 
-- **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
+- **For iOS 9+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
     pod 'ReusableKit'
