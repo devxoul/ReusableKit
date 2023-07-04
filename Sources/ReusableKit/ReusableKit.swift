@@ -28,8 +28,14 @@ public struct ReusableCell<Cell: CellType> {
   ///
   /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
   /// - parameter nibName: A name of nib.
+  /// - parameter nibType: A type of nib.
   public init(identifier: String? = nil, nibName: String) {
     let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
+  }
+
+  public init<T>(identifier: String? = nil, nibType: T) {
+    let nib = UINib(nibName: String(describing: nibType.self), bundle: nil)
     self.init(identifier: identifier, nib: nib)
   }
 }
@@ -58,8 +64,14 @@ public struct ReusableView<View: ViewType> {
   ///
   /// - parameter identifier: A reuse identifier. Use random UUID string if identifier is not provided.
   /// - parameter nibName: A name of nib.
+  /// - parameter nibType: A type of nib.
   public init(identifier: String? = nil, nibName: String) {
     let nib = UINib(nibName: nibName, bundle: nil)
+    self.init(identifier: identifier, nib: nib)
+  }
+      
+  public init<T>(identifier: String? = nil, nibType: T) {
+    let nib = UINib(nibName: String(describing: nibType.self), bundle: nil)
     self.init(identifier: identifier, nib: nib)
   }
 }

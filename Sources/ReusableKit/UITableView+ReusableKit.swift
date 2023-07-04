@@ -19,7 +19,7 @@ extension UITableView {
 
   /// Returns a generic reusable cell located by its identifier.
   public func dequeue<Cell>(_ cell: ReusableCell<Cell>) -> Cell? {
-    return self.dequeueReusableCell(withIdentifier: cell.identifier) as? Cell
+    return self.dequeueReusableCell(withIdentifier: cell.identifier) as! Cell
   }
 
   /// Returns a generic reusable cell located by its identifier.
@@ -40,7 +40,7 @@ extension UITableView {
 
   /// Returns a generic reusable header of footer view located by its identifier.
   public func dequeue<View>(_ view: ReusableView<View>) -> View? {
-    return self.dequeueReusableHeaderFooterView(withIdentifier: view.identifier) as? View
+    return self.dequeueReusableHeaderFooterView(withIdentifier: view.identifier) as! View
   }
 }
 #endif
